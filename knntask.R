@@ -55,4 +55,9 @@ ggplot(big_errors_df, aes(x = kValues, y = big_errors)) +
   theme(axis.text.y=element_text(angle=-45, hjust=-0.1, vjust=-0.5)) +
   scale_colour_manual(values = c("red","blue"))
 
+ggplot(big_errors_df) + 
+  geom_histogram(binwidth=1,aes(x=big_errors)) +
+  xlab("Errors")+ 
+  scale_x_continuous(breaks=c(1:max(big_errors_df[,2])))
+
  
